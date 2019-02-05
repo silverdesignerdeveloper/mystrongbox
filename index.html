@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Strongbox</title> 
+  <link rel="stylesheet" href="css/mainStyle.css">
+  <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="login_div" class="main-div">
+    <h3>Login</h3>
+    <input type="email" name="email" id="email_field" placeholder="E-mail">
+    <input type="password" name="password" id="password_field" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="create_account()">Create a new account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User!</h3>
+    <p id="user_para">Welcome to My Strongbox. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+    <button id="verify_btn" onclick="send_verification()">Send Verification</button>
+    <!-- <img src="images/strongbox.gif" alt="my strongbox"> -->
+
+     
+  </div>
+  <img src="images/strongbox.gif" alt="strongbox" id="img1"/>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCFbLEbxhUgdR7FlmnPppWGqcR26BD43hY",
+    authDomain: "my-strongbox.firebaseapp.com",
+    databaseURL: "https://my-strongbox.firebaseio.com",
+    projectId: "my-strongbox",
+    storageBucket: "my-strongbox.appspot.com",
+    messagingSenderId: "558676643888"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
+<script src="js/mainJS.js"></script>
+</html>
