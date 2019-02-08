@@ -35,10 +35,11 @@ class UI {
      this.showBalance();
                              //Firebase cash Expense
                              var database = firebase.database();
-                             var cashRef = database.ref('cash/budget-balance');
+                             var cashRef = database.ref('wallet/budget-balance');
                              cashRef.set({
                                cash: value
                              });
+
    }
   }
   //show balance
@@ -58,6 +59,7 @@ class UI {
       this.balance.classList.remove('showRed', 'showGreen');
       this.balance.classList.add('showBlack');
     }
+
   }
   //submit expense form
   submitExpenseForm(){
@@ -76,9 +78,9 @@ class UI {
 
       //Firebase cash Expense
       var database = firebase.database();
-        var cashRef = database.ref('cash/expense');
+        var cashRef = database.ref('wallet/expense');
         cashRef.set({
-          name: this.itemID,
+          name: this.expenseInput.value,
           count: amount
         });
         
@@ -123,6 +125,7 @@ addExpense(expense){
 
   //total expense
   totalExpense() {
+    
     let total = 0;
     if (this.itemList.length > 0) {
       total = this.itemList.reduce(function(acc,curr){

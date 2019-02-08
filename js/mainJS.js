@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user){
         document.getElementById("verify_btn").style.display = "block";
       }
 
-      document.getElementById("user_para").innerHTML = "Welcome : " + email_id + "<br/> Verified : " + email_verified;
+      document.getElementById("user_para").innerHTML = "&nbsp;" + email_id + " Verified : " + email_verified;
     }
 
   } else {

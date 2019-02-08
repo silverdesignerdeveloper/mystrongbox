@@ -13,17 +13,30 @@
 	</script>
 </head>
 <body>
+
 	<div class="main-div" id="login_div">
-		<h3>Login</h3><input id="email_field" name="email" placeholder="E-mail" type="email"> <input id="password_field" name="password" placeholder="Password" type="password"> <button onclick="login()" class="main_div_button">Login</button> <button onclick="create_account()"class="main_div_button">Create a new account</button>
-	</div>
-	<div class="loggedin-div" id="user_div">
-		<h3>Welcome User!</h3>
-    <p id="user_para">Welcome to My Strongbox. You're currently logged in.</p><img alt="strongbox" id="logo" src="images/strongbox.gif"> <button onclick="logout()"class="main_div_button">Logout</button> <button id="verify_btn" onclick="send_verification()"class="main_div_button">Send Verification</button>
+    <h3>Login</h3>
+    <input id="email_field" name="email" placeholder="E-mail" type="email"> 
+    <input id="password_field" name="password" placeholder="Password" type="password"> 
+    <button onclick="login()" class="button_login">Login</button> 
+    <button onclick="create_account()"class="button_newAccount">Create a new account</button>
+  </div>
+  
+	<div class="loggedin-div" id="user_div" class="login_div">
+    <div class="header">
+      <a href="#default" class="logo">My Strongbox</a>
+      <div class="header-right">
+        <p id="user_para"></p>
+        <a class="active" href="#home">Home</a>
+        <button onclick="logout()" class="main_div_button">Logout</button> 
+        <button id="verify_btn" onclick="send_verification()"class="main_div_button">Send Verification</button>
+      </div>
+    </div> 
     <div class="container-fluid">
       <div class="row">
         <div class="col-11 mx-auto pt-3">
           <!-- title -->
-          <h3 class="text-uppercase mb-4">My Strongbox</h3>
+          <img alt="strongbox" class="logo" src="images/strongbox.gif">
           <div class="row">
             <div class="col-md-5 my-3">
               <!-- budget feedback -->
@@ -31,7 +44,7 @@
                 budget feedback
               </div><!-- budget form -->
               <form class=" budget-form" id="budget-form" name="budget-form">
-                <h5 class="text-capitalize">please enter your budget</h5>
+                <h5 class="text-capitalize">Wallet</h5>
                 <div class="form-group">
                   <input class="form-control budget-input" id="budget-input" type="number">
                 </div><!-- submit button -->
